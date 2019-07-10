@@ -1,0 +1,496 @@
+
+  body{
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+  }
+  #wrap_invoice {
+    background: white;
+    padding: 0.5cm;
+    margin: 2mm auto;
+    border: 1px #D3D3D3 solid;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+  }
+  #wrap_invoice,
+  .text-color{
+    color: #555;
+  }
+  #wrap_invoice .page{
+    background: white;
+    font-family: sans-serif;
+    page-break-after: always;
+  }
+  #wrap_invoice .page:last-child {
+    page-break-after: avoid;
+  }
+  #wrap_invoice h3{
+    font-size: 24px;
+    font-weight: bold;
+    color: #3785B1;
+  }
+  #wrap_invoice h4{
+    font-size: 15px;
+    font-weight: bold;
+    color: #3785B1;
+  }
+  #wrap_invoice p{
+    font-size: 12px;
+  }
+  .table_invoice{
+    border-radius: 0px;
+    font-size: 12px;
+    width: 100% !important;
+  }
+  .table_invoice thead th{
+    vertical-align: middle;
+    text-align:center;
+    background: #3785B1;
+    color: white;
+    padding: 5px 0;
+  }
+  .table_invoice th, .table_invoice td {
+    padding: 2px 8px;
+    border-radius: 0px !important;
+    width: inherit !important;
+  }
+  .table_invoice tfoot{
+    display: table-footer-group;
+  }
+  .A5 .table_invoice *{
+    font-size: 10px !important;
+  }
+  .A5 .table_invoice th, .A5 .table_invoice td {
+    line-height: 14px;
+    padding: 3px 0;
+  }
+  .A5 p{
+    font-size: 10px !important;
+    margin: 0;
+  }
+  #wrap_invoice.A5 .inv{
+    font-size: 10px !important;
+  }
+  .A5 .invoice-logo-center,
+  .A5 .invoice-logo{
+    height: 80px;
+    line-height: 80px;
+  }
+  #wrap_invoice.A5 .A4_info{
+    display: none;
+  }
+  #wrap_invoice hr{
+    display:block;
+    border-top-color: #dfdfdf;
+    margin:10px 0;
+  }
+  #wrap_invoice .inv{
+    vertical-align: middle;
+    font-size: 12px;
+  }
+  #wrap_invoice .inv.col{
+    line-height: 25px;
+    margin: 10px 0 0 0;
+    font-weight: normal;
+  }
+  #wrap_invoice .inv.col b{
+    color: #363636;
+  }
+  #wrap_invoice .page-title{
+    font-size: 18px;
+    font-weight: bold;
+    color: #3785B1;
+    margin: 0px auto;
+    line-height: 24px;
+  }
+  #wrap_invoice .pagging{
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    padding: 0 10px;
+    font-size: 9px;
+    font-weight: bold;
+  }
+
+  #wrap_invoice,
+  #wrap_invoice.portrait{
+    width: 21cm;
+    max-width: 21cm;
+    min-height: 29.6cm;
+  }
+  #wrap_invoice.landscape{
+    width: 29.7cm;
+    max-width: 29.7cm;
+    min-height: 20.9cm;
+  }
+  #wrap_invoice.A5,
+  #wrap_invoice.A5.portrait{
+    width: 14.85cm;
+    max-width: 14.85cm;
+    min-height: 20.9cm;
+  }
+  #wrap_invoice.A5.landscape{
+    width: 21cm;
+    max-width: 21cm;
+    min-height: 14.75cm;
+  }
+  #wrap_invoice.Letter,
+  #wrap_invoice.Letter.portrait{
+    width: 21.6cm;
+    max-width: 21.6cm;
+    min-height: 27.8cm;
+  }
+  #wrap_invoice.Letter.landscape{
+    width: 27.9cm;
+    max-width: 27.9cm;
+    min-height: 21.5cm;
+  }
+  #wrap_invoice.Legal,
+  #wrap_invoice.Legal.portrait{
+    width: 21.6cm;
+    max-width: 21.6cm;
+    min-height: 35.5cm;
+  }
+  #wrap_invoice.Legal.landscape{
+    width: 35.6cm;
+    max-width: 35.6cm;
+    min-height: 21.5cm;
+  }
+  @page {
+    margin: 0;
+    padding: 0;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+  #wrap_invoice .text-bold{
+    font-weight: bold;
+  }
+  #wrap_invoice .float-none{
+    float: none !important;
+  }
+  #wrap_invoice .float-left{
+    float: left !important;
+  }
+  #wrap_invoice .float-right{
+    float: right !important;
+  }
+  #wrap_invoice .bordered{
+    border: 1px solid #E0E0E0;
+  }
+  #wrap_invoice .overflow-hidden{
+    overflow: hidden;
+  }
+  #wrap_invoice input.trans {
+    width: inherit;
+    margin: 0px;
+    font-size: inherit;
+    border: none;
+    background: none;
+    text-align: center;
+    padding: 2px 8px;
+  }
+
+  @media print {
+    @page{
+      margin: 0.5cm;
+      margin: 0cm;
+    }
+    #wrap_invoice {
+      margin: 0;
+      padding: 0.5cm;
+      border: initial;
+      border-radius: initial;
+      box-shadow: initial;
+      overflow: hidden;
+      transform: inherit !important;
+      -webkit-transform: inherit !important;
+      transform-origin: inherit !important;
+      -webkit-transform-origin: inherit !important;
+    }
+    #wrap_invoice {
+      page-break-after: always;
+    }
+    #wrap_invoice:last-child {
+      page-break-after: avoid;
+    }
+    #not-printed{
+      display: none;
+    }
+  }
+
+
+  .invoice_header .invoice-logo{
+    height: 120px;
+    line-height: 120px;
+    text-align: center;
+  }
+  .invoice_header .invoice-logo-center{
+    height: 90px;
+    line-height: 90px;
+    text-align: center;
+  }
+  .invoice_header .invoice-logo img{
+    margin: auto !important;
+  }
+  .invoice_header .invoice-header-info{
+    padding:10px;
+    font-size:12px;
+    min-height: 120px;
+  }
+  .invoice_header .model1 .invoice-header-info{
+    border-left: 4px solid #dfdfdf;
+  }
+  .invoice_header .model1 .invoice-logo{
+    min-width: 120px;
+    max-width: 240px;
+  }
+  .invoice_header .model2 .invoice-header-info{
+    border-right: 4px solid #dfdfdf;
+  }
+  .invoice_header .model2 .invoice-logo{
+    text-align: center;
+  }
+  .invoice_header .model3{
+    text-align: center;
+  }
+  .invoice_header .model3 .invoice-header-info{
+    height: inherit;
+  }
+  .invoice_header .model3 .invoice-logo{
+    height: 60px;
+    width: inherit;
+    line-height: 60px;
+    margin: 10px 0 0 0;
+  }
+  .invoice_header .model4 .invoice-logo,
+  .invoice_header .model3 .invoice-logo{
+    max-width: inherit;
+  }
+  .invoice_header .model3 .invoice-logo img{
+    height: inherit;
+  }
+  .invoice_header .model4{
+    text-align: center;
+  }
+  .invoice_header .model4 .invoice-logo{
+    height: 60px;
+    width: inherit;
+    line-height: 60px;
+    margin: 30px 0;
+  }
+  .invoice_header .model4 .invoice-logo img{
+    height: inherit;
+  }
+  .invoice_header{
+    background: white;
+    color: black;
+  }
+  .invoice_footer{
+    text-align: center;
+    font-size: 10px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+
+
+  table {
+    background-color: transparent;
+  }
+  th {
+    text-align: left;
+  }
+  .table_invoice {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+  .table_invoice > thead > tr > th,
+  .table_invoice > tbody > tr > th,
+  .table_invoice > tfoot > tr > th,
+  .table_invoice > thead > tr > td,
+  .table_invoice > tbody > tr > td,
+  .table_invoice > tfoot > tr > td {
+    padding: 8px;
+    line-height: 1.42857143;
+    vertical-align: center;
+    border-top: 1px solid #dddddd;
+  }
+  .table_invoice > thead > tr > th {
+    vertical-align: middle;
+    border-bottom: 2px solid #dddddd;
+  }
+  .table_invoice > tfoot > tr > th,
+  .table_invoice > tfoot > tr > td{
+    border-top: 2px solid #aaaaaa;
+  }
+  .table_invoice > caption + thead > tr:first-child > th,
+  .table_invoice > colgroup + thead > tr:first-child > th,
+  .table_invoice > thead:first-child > tr:first-child > th,
+  .table_invoice > caption + thead > tr:first-child > td,
+  .table_invoice > colgroup + thead > tr:first-child > td,
+  .table_invoice > thead:first-child > tr:first-child > td {
+    border-top: 0;
+  }
+  .table_invoice > tbody + tbody {
+    border-top: 2px solid #dddddd;
+  }
+  .table_invoice .table_invoice {
+    background-color: #ffffff;
+  }
+  .table_invoice-condensed > thead > tr > th,
+  .table_invoice-condensed > tbody > tr > th,
+  .table_invoice-condensed > tfoot > tr > th,
+  .table_invoice-condensed > thead > tr > td,
+  .table_invoice-condensed > tbody > tr > td,
+  .table_invoice-condensed > tfoot > tr > td {
+    padding: 0 5px;
+  }
+  .table_invoice-bordered {
+    border: 1px solid #dddddd;
+  }
+  .table_invoice-bordered > thead > tr > th,
+  .table_invoice-bordered > tbody > tr > th,
+  .table_invoice-bordered > tfoot > tr > th,
+  .table_invoice-bordered > thead > tr > td,
+  .table_invoice-bordered > tbody > tr > td,
+  .table_invoice-bordered > tfoot > tr > td {
+    border: 1px solid #dddddd;
+  }
+  .table_invoice-bordered > thead > tr > th,
+  .table_invoice-bordered > thead > tr > td {
+    border-bottom-width: 2px;
+  }
+  .table_invoice-striped > tbody > tr:nth-child(odd) > td,
+  .table_invoice-striped > tbody > tr:nth-child(odd) > th {
+    background-color: #f9f9f9;
+  }
+  table col[class*="col-"] {
+    position: static;
+    float: none;
+    display: table-column;
+  }
+  table td[class*="col-"],
+  table th[class*="col-"] {
+    position: static;
+    float: none;
+    display: table-cell;
+  }
+  .table_invoice > thead > tr > td.active,
+  .table_invoice > tbody > tr > td.active,
+  .table_invoice > tfoot > tr > td.active,
+  .table_invoice > thead > tr > th.active,
+  .table_invoice > tbody > tr > th.active,
+  .table_invoice > tfoot > tr > th.active,
+  .table_invoice > thead > tr.active > td,
+  .table_invoice > tbody > tr.active > td,
+  .table_invoice > tfoot > tr.active > td,
+  .table_invoice > thead > tr.active > th,
+  .table_invoice > tbody > tr.active > th,
+  .table_invoice > tfoot > tr.active > th {
+    background-color: #f5f5f5;
+  }
+  .table_invoice > thead > tr > td.success,
+  .table_invoice > tbody > tr > td.success,
+  .table_invoice > tfoot > tr > td.success,
+  .table_invoice > thead > tr > th.success,
+  .table_invoice > tbody > tr > th.success,
+  .table_invoice > tfoot > tr > th.success,
+  .table_invoice > thead > tr.success > td,
+  .table_invoice > tbody > tr.success > td,
+  .table_invoice > tfoot > tr.success > td,
+  .table_invoice > thead > tr.success > th,
+  .table_invoice > tbody > tr.success > th,
+  .table_invoice > tfoot > tr.success > th {
+    background-color: #dff0d8;
+  }
+  .table_invoice > thead > tr > td.info,
+  .table_invoice > tbody > tr > td.info,
+  .table_invoice > tfoot > tr > td.info,
+  .table_invoice > thead > tr > th.info,
+  .table_invoice > tbody > tr > th.info,
+  .table_invoice > tfoot > tr > th.info,
+  .table_invoice > thead > tr.info > td,
+  .table_invoice > tbody > tr.info > td,
+  .table_invoice > tfoot > tr.info > td,
+  .table_invoice > thead > tr.info > th,
+  .table_invoice > tbody > tr.info > th,
+  .table_invoice > tfoot > tr.info > th {
+    background-color: #d9edf7;
+  }
+  .table_invoice > thead > tr > td.warning,
+  .table_invoice > tbody > tr > td.warning,
+  .table_invoice > tfoot > tr > td.warning,
+  .table_invoice > thead > tr > th.warning,
+  .table_invoice > tbody > tr > th.warning,
+  .table_invoice > tfoot > tr > th.warning,
+  .table_invoice > thead > tr.warning > td,
+  .table_invoice > tbody > tr.warning > td,
+  .table_invoice > tfoot > tr.warning > td,
+  .table_invoice > thead > tr.warning > th,
+  .table_invoice > tbody > tr.warning > th,
+  .table_invoice > tfoot > tr.warning > th {
+    background-color: #fcf8e3;
+  }
+  .table_invoice > thead > tr > td.danger,
+  .table_invoice > tbody > tr > td.danger,
+  .table_invoice > tfoot > tr > td.danger,
+  .table_invoice > thead > tr > th.danger,
+  .table_invoice > tbody > tr > th.danger,
+  .table_invoice > tfoot > tr > th.danger,
+  .table_invoice > thead > tr.danger > td,
+  .table_invoice > tbody > tr.danger > td,
+  .table_invoice > tfoot > tr.danger > td,
+  .table_invoice > thead > tr.danger > th,
+  .table_invoice > tbody > tr.danger > th,
+  .table_invoice > tfoot > tr.danger > th {
+    background-color: #f2dede;
+  }
+  .text-danger {
+    color: #DD0703 !important;
+  }
+  a.text-danger:hover {
+    color: #843534;
+  }
+
+  .vertical-middle{
+    vertical-align: middle;
+  }
+  .control-label{
+    width: 27%;
+    display: inline-block;
+    line-height: 20px;
+    font-weight: bold;
+    vertical-align: top;
+  }
+  .control-p{
+    width: 65%;
+    display: inline-block;
+    line-height: 20px;
+  }
+  .col-sm-6 > .control-label{
+    width: 42%;
+  }
+  .col-sm-6 > .control-p{
+    width: 50%;
+  }
+  .column-border {
+    border-right: 1px solid #ddd;
+  }
+  text[text-anchor="end"] {
+    display:none;
+  }
+
+.demo_invoice{
+  color: rgba(0,0,0,0.2);
+  position: absolute;
+  font-size: 9rem;
+  top: 25%;
+  left: 15%;
+  transform: rotate(-45deg);
+}
